@@ -15,7 +15,7 @@ RUN echo 'export PATH="$RYE_HOME/shims:$PATH"' >> ~/.bashrc
 RUN curl -sSf https://rye.astral.sh/get | RYE_TOOLCHAIN_VERSION="3.11" RYE_INSTALL_OPTION="--yes" bash
 RUN rye config --set-bool behavior.global-python=true
 
-COPY .python-version pyproject.toml .python-version requirements.lock README.md ./
+COPY .python-version pyproject.toml .python-version README.md ./
 COPY src ./src
 
 RUN rye sync
