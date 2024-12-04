@@ -9,7 +9,7 @@ RUN apt-get update && \
 ENV RYE_HOME="/opt/rye"
 ENV PATH="$RYE_HOME/shims:$PATH"
 
-RUN useradd -u 1000 -s /bin/bash -U mmore
+RUN useradd --uid 1000 --shell /bin/bash --user-group --create-home mmore
 
 USER 1000
 
