@@ -9,6 +9,10 @@ RUN apt-get update && \
 ENV RYE_HOME="/opt/rye"
 ENV PATH="$RYE_HOME/shims:$PATH"
 
+RUN useradd -u 1000 -s /bin/bash -U mmore
+
+USER 1000
+
 RUN echo 'export RYE_HOME="/opt/rye"' >> ~/.bashrc
 RUN echo 'export PATH="$RYE_HOME/shims:$PATH"' >> ~/.bashrc
 
